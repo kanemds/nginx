@@ -1,0 +1,17 @@
+inside nginx.conf ';' is needed
+
+http{
+  server {
+    // listen to localhost:8080;
+    listen 8080 
+    // folder path(file path) that run with localhost 
+    root /home/{username}/lighthouse/ownProject/nginx;
+
+    // set specific file to run the static file
+    index runThis.html;
+  }
+}
+
+
+// needs events, empty object is fine
+events {}
