@@ -1,6 +1,35 @@
 inside nginx.conf ';' is needed
+check the nginx folder mime.types
+help to recognize extension instead of typing from our own
+ex:
+  types {
+    text/html                             html htm shtml;
+    text/css                              css;
+    text/xml                              xml;
+    image/gif                             gif;
+    image/jpeg                            jpeg jpg;
+    application/javascript                js;
+    application/atom+xml                  atom;
+    application/rss+xml                   rss;
+
+    etc.....
+  }
+
+
 
 http{
+
+  //////////////////////use mime.types instead ////////////////////////////////////////
+	types{
+    // check network Headers content-type: 
+    // type:  extension .css .html .js etc...
+		text/css css;
+		text/html html;
+	}
+  //////////////////////////////////////////////////////////////
+
+  include mime.types
+  
   server {
     // listen to localhost:8080;
     listen 8080 
