@@ -1,0 +1,5 @@
+sometimes needs permission
+
+sudo chown username filename
+
+change owner ship
