@@ -63,7 +63,7 @@ http{
           alias {path}/cars;
       }
 
-    // redirect if path not exist
+    // try_files if path not exist
     location /toys {
 				root {path};
         // try first 
@@ -71,6 +71,19 @@ http{
         // finally page 404
 				try_files /toys/index.html /runThis.html =404;
 		}
+
+    // redirect 307 http code: redirect
+    // localhost:8080/bikes 
+    // redirect to localhost:8080/books
+    	location /bikes {
+			return 307 /books;
+		}
+
+    // stay at the route and use other content forward to the route
+    //  (\w+) one or more words
+    // $1 value match by (\w+)
+    rewrite ^/number/(\w+) /count/$1;
+
   }
 }
 

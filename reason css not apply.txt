@@ -1,0 +1,5 @@
+1. inspect Network / Headers:
+  Status Code: 200 OK (from disk cache) 
+  needs to clear browser data
+
+2. include mime.types; in nginx.conf
