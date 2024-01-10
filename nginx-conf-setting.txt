@@ -1,4 +1,12 @@
 inside nginx.conf ';' is needed
+
+~ performs a case-sensitive match
+
+~* performs a case-insensitive match
+
+!~, or !~* to mean doesn't match
+
+
 check the nginx folder mime.types
 help to recognize extension instead of typing from our own
 ex:
@@ -38,6 +46,31 @@ http{
 
     // set specific file to run the static file
     index runThis.html;
+
+    // routes
+    location /cars {
+        bad example:
+          root {path}/car;
+       correct: location: value must match with folder 
+          root {path};
+      }
+
+    // new route with same file
+        location /bikes {
+        bad example:
+          root {path};
+       correct: the location must giving the exact path
+          alias {path}/cars;
+      }
+
+    // redirect if path not exist
+    location /toys {
+				root {path};
+        // try first 
+        // try second 
+        // finally page 404
+				try_files /toys/index.html /runThis.html =404;
+		}
   }
 }
 
