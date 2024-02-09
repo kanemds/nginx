@@ -1,0 +1,11 @@
+first:
+
+in nginx folder sites-available create project port
+
+{project name}.conf
+
+second:
+
+ sudo ln -s /etc/nginx/sites-available/{project name}.conf/etc/nginx/sites-enabled/
+
+sudo rm /etc/nginx/sites-enabled/{project name}.conf
