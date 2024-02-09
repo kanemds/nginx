@@ -1,0 +1,4 @@
+check: sudo service php8.3-fpm status
+
+make sure is running
+
